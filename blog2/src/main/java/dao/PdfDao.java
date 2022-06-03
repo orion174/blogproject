@@ -1,11 +1,11 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import util.DButil;
 import vo.Pdf;
 
 public class PdfDao {
@@ -16,16 +16,12 @@ public class PdfDao {
 		ArrayList<Pdf> list = new ArrayList<Pdf>(); // 정보를 담아줄 ArrayList<Pdf> 생성
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
-		String dbuser = "root"; 
-		String dbpw = "java1234"; 
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
@@ -65,16 +61,12 @@ public class PdfDao {
 		Pdf pdf = null; // class 선언 후 초기화
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
-		String dbuser = "root"; 
-		String dbpw = "java1234";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
@@ -107,16 +99,12 @@ public class PdfDao {
 	// pdf 업로드 코드
 	public void insertPdf(Pdf pdf) throws Exception {
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; 
-		String dbuser = "root"; 
-		String dbpw = "java1234";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
@@ -153,15 +141,11 @@ public class PdfDao {
 		int row = 0; // 함수 결과값(쩡수) 반환해줄 변수 선언 후 초기화
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 	
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; 
-		String dbuser = "root";
-		String dbpw = "java1234"; 
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql =
@@ -185,16 +169,12 @@ public class PdfDao {
 		int row = 0; // 함수 결과값(쩡수) 반환해줄 변수 선언 후 초기화
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; 
-		String dbuser = "root"; // DB 아이디
-		String dbpw = "java1234"; // DB 패스워드
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); // DB접속
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql =

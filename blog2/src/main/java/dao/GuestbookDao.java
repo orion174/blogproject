@@ -1,6 +1,8 @@
 package dao;
 
 import java.util.ArrayList;
+
+import util.DButil;
 import vo.Guestbook;
 import java.sql.*;
 
@@ -12,16 +14,12 @@ public class GuestbookDao {
 		Guestbook guestbook = null; // class 선언 후 초기화
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
-		String dbuser = "root";
-		String dbpw = "java1234";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
@@ -55,15 +53,11 @@ public class GuestbookDao {
 		int row = 0; // 함수 결과값(쩡수) 반환해줄 변수 선언 후 초기화
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
-		String dbuser = "root";
-		String dbpw = "java1234";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
@@ -93,15 +87,11 @@ public class GuestbookDao {
 		int row = 0; // 함수 결과값(쩡수) 반환해줄 변수 선언 후 초기화
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
-		String dbuser = "root";
-		String dbpw = "java1234";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
@@ -126,15 +116,11 @@ public class GuestbookDao {
 	// 입력 프로세스 insertGuestbookAction.jsp에서 호출
 	public void insertGuestbook(Guestbook guestbook) throws Exception {
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
-		String dbuser = "root";
-		String dbpw = "java1234";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DButil.getConnection();
 	
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
@@ -162,16 +148,12 @@ public class GuestbookDao {
 		int row = 0; // 함수 결과값(쩡수) 반환해줄 변수 선언 후 초기화
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
-		String dbuser = "root";
-		String dbpw = "java1234";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DButil.getConnection();
 		
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
@@ -196,16 +178,12 @@ public class GuestbookDao {
 		ArrayList<Guestbook> list = new ArrayList<Guestbook>(); // 배열리스트 선언
 		
 		// MySql 드라이버 로딩
-		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
 		// MySql RDBMS에 접속(IP주소, 접속계정 아이디, 패스워드)
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
-		String dbuser = "root";
-		String dbpw = "java1234";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DButil.getConnection();
 	
 		// SQL 쿼리를 문자열로 저장
 		String sql = 
